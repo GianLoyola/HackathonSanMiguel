@@ -83,7 +83,7 @@ export default function Rules() {
                 {rules.map((r, i) => (
                   <div key={i} className="rule-card" style={{ '--ri-c': r.c, '--ri-bg': r.bg }}>
                     <div className="rule-card__ico">
-                      <span role="img" aria-hidden="true"><r.icon /></span>
+                      <span role="img" aria-hidden="true"><r.icon color={r.c} /></span>
                     </div>
                     <div>
                       <span className="rule-card__dot" />
@@ -96,7 +96,7 @@ export default function Rules() {
                 {/* Equity note */}
                 <div className="rule-card full" style={{ '--ri-c':'var(--teal)', '--ri-bg':'rgba(0,191,174,.08)', background:'rgba(0,191,174,.03)', borderColor:'rgba(0,191,174,.2)' }}>
                   <div className="rule-card__ico">
-                    <span role="img" aria-hidden="true"><FaShieldAlt /></span>
+                    <span role="img" aria-hidden="true"><FaShieldAlt color="var(--teal)" /></span>
                   </div>
                   <div>
                     <p className="rule-card__desc" style={{ color:'var(--gray-700)', fontWeight:500 }}>
@@ -122,7 +122,7 @@ export default function Rules() {
                 {criteria.map((c, i) => (
                   <div key={i} className="eval-card" style={{ '--ec-c': c.c }}>
                     <div className="eval-card__top">
-                      <span className="eval-card__icon" role="img" aria-hidden="true"><c.icon /></span>
+                      <span className="eval-card__icon" role="img" aria-hidden="true"><c.icon color={c.c} /></span>
                       <span className="eval-card__pct">{c.pct}%</span>
                     </div>
                     <h3 className="eval-card__title">{c.title}</h3>
@@ -134,7 +134,7 @@ export default function Rules() {
                 ))}
 
                 <div className="eval__note full">
-                  <span role="img" aria-label="Nota" style={{ fontSize:'1.2rem', flexShrink:0 }}><FaLightbulb /></span>
+                  <span role="img" aria-label="Nota" style={{ fontSize:'1.2rem', flexShrink:0 }}><FaLightbulb color="#FFD700" /></span>
                   <p>
                     El puntaje es acumulativo. Un MVP sólido con buena defensa técnica puede ganarle
                     a uno más complejo pero mal explicado. ¡Prepara tu pitch!

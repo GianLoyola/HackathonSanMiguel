@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaEnvelope, FaWhatsapp, FaInstagram, FaFacebook, FaHeart } from 'react-icons/fa'
 import logoHeader from '../img/logoHeader.png'
 
 const links = [
@@ -81,14 +82,14 @@ export default function Footer() {
             <div className="footer__contact">
 
               <div className="footer__contact-row">
-                <span className="footer__contact-icon">✉️</span>
+                <span className="footer__contact-icon"><FaEnvelope /></span>
                 <a href="mailto:giandev312@gmail.com" className="footer__link">
                   giandev312@gmail.com
                 </a>
               </div>
 
               <div className="footer__contact-row">
-                <span className="footer__contact-icon">💬</span>
+                <span className="footer__contact-icon"><FaWhatsapp /></span>
                 <a
                   href="https://wa.me/51907090315"
                   target="_blank"
@@ -100,7 +101,7 @@ export default function Footer() {
               </div>
 
               <div className="footer__contact-row">
-                <span className="footer__contact-icon">📸</span>
+                <span className="footer__contact-icon"><FaInstagram /></span>
                 <a
                   href="https://www.instagram.com/hackathonjuvenil/"
                   target="_blank"
@@ -112,7 +113,7 @@ export default function Footer() {
               </div>
 
               <div className="footer__contact-row">
-                <span className="footer__contact-icon">👥</span>
+                <span className="footer__contact-icon"><FaFacebook /></span>
                 {/* Facebook link — pendiente de URL */}
                 <span className="footer__link footer__link--muted">
                   Hackathon San Miguel (Facebook)
@@ -140,7 +141,7 @@ export default function Footer() {
               <span key={i} className="footer__star-deco">{s}</span>
             ))}
           </div>
-          <p className="footer__credit">Hecho con <span>♥</span> para la comunidad</p>
+          <p className="footer__credit">Hecho con <span><FaHeart /></span> para la comunidad</p>
         </div>
 
       </div>

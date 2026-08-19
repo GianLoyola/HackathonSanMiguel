@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaRocket, FaLaptop, FaMicrophone } from 'react-icons/fa'
 import chicoaltavoz     from '../img/chicoaltavoz.png'
 import chicadev         from '../img/chicaDev.png'
 import chicoestadistica from '../img/chicoestadistica.png'
@@ -6,7 +7,7 @@ import chicossaltando   from '../img/chicossaltando.png'
 
 const days = [
   {
-    id: 0, label:'Día 1', date:'Jue 22 Oct', mode:'Presencial', emoji:'🚀',
+    id: 0, label:'Día 1', date:'Jue 22 Oct', mode:'Presencial', icon: FaRocket,
     color:'#00BFAE', ilu: chicoaltavoz,
     events:[
       { time:'16:00–17:00', name:'Apertura',   block:'Apertura',   bc:'var(--teal)', bb:'rgba(0,191,174,.1)',
@@ -18,7 +19,7 @@ const days = [
     ],
   },
   {
-    id: 1, label:'Día 2', date:'Vie 23 Oct', mode:'Virtual', emoji:'💻',
+    id: 1, label:'Día 2', date:'Vie 23 Oct', mode:'Virtual', icon: FaLaptop,
     color:'#0066FF', ilu: chicadev,
     events:[
       { time:'16:00–17:00', name:'Apertura',   block:'Apertura',   bc:'var(--teal)', bb:'rgba(0,191,174,.1)',
@@ -30,7 +31,7 @@ const days = [
     ],
   },
   {
-    id: 2, label:'Día 3', date:'Sáb 24 Oct', mode:'Presencial', emoji:'🎤',
+    id: 2, label:'Día 3', date:'Sáb 24 Oct', mode:'Presencial', icon: FaMicrophone,
     color:'#FF3B6E', ilu: chicoestadistica,
     events:[
       { time:'15:00–16:00', name:'Retrospectiva',    block:'Retrospectiva',  bc:'var(--navy)', bb:'rgba(13,27,61,.08)',
@@ -84,7 +85,9 @@ export default function Schedule() {
               style={{ '--tab-c': d.color }}
               onClick={() => setActive(d.id)}
             >
-              <span className="sc-tab__icon">{d.emoji}</span>
+              <span className="sc-tab__icon">
+                <d.icon color={active === d.id ? '#fff' : d.color} />
+              </span>
               <span>
                 <span className="sc-tab__label">{d.label}</span>
                 <span className="sc-tab__date">{d.date}</span>

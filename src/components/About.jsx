@@ -1,11 +1,12 @@
 import React from 'react'
 import chicossaludando from '../img/chicossaludando.png'
+import { FaUsers, FaBirthdayCake, FaHandshake, FaCalendarAlt } from 'react-icons/fa'
 
 const stats = [
-  { v:'50',     l:'Participantes',       e:'👥', c:'var(--teal)' },
-  { v:'15–29',  l:'Rango de edad',        e:'🎂', c:'var(--blue)' },
-  { v:'3–4',    l:'Por equipo',           e:'🤝', c:'var(--pink)' },
-  { v:'10 Oct', l:'Cierre inscripciones', e:'📅', c:'var(--navy)' },
+  { v:'50',     l:'Participantes',       icon: FaUsers, c:'var(--teal)' },
+  { v:'15–29',  l:'Rango de edad',        icon: FaBirthdayCake, c:'var(--blue)' },
+  { v:'3–4',    l:'Por equipo',           icon: FaHandshake, c:'var(--pink)' },
+  { v:'10 Oct', l:'Cierre inscripciones', icon: FaCalendarAlt, c:'#FFD700' },
 ]
 
 export default function About() {
@@ -55,7 +56,9 @@ export default function About() {
               className={`about__stat-card`}
               style={{ '--sc-color': s.c }}
             >
-              <div className="about__stat-emoji">{s.e}</div>
+              <div className="about__stat-emoji">
+                <s.icon color={s.c} style={{ opacity: 0.7 }} />
+              </div>
               <div className="about__stat-val">{s.v}</div>
               <div className="about__stat-lbl">{s.l}</div>
             </div>
